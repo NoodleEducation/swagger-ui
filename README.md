@@ -1,3 +1,10 @@
+## Noodle-specific notes
+
+Clone this repo to the same parent folder as your noodle-api repo.
+
+Running `gulp` will copy swagger static files into the appropriate
+place in your static files directory.
+
 # Swagger UI
 
 [![Build Status](https://travis-ci.org/swagger-api/swagger-ui.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-ui)

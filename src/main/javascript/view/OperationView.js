@@ -19,6 +19,15 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     this.parentId = this.model.parentId;
     this.nickname = this.model.nickname;
     this.model.encodedParentId = encodeURIComponent(this.parentId);
+
+    // Fix for duplicate ? in queries where the path already
+    // contains a query parameter
+    this.model.rawPath = this.model.path;
+    var tokens = this.model.rawPath.split('?');
+    if (tokens.length > 1) {
+      this.model.path = tokens[0];
+    }
+
     return this;
   },
 
@@ -321,6 +330,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       opts.responseContentType = $('div select[name=responseContentType]', $(this.el)).val();
       opts.requestContentType = $('div select[name=parameterContentType]', $(this.el)).val();
       $('.response_throbber', $(this.el)).show();
+
       if (isFileUpload) {
         $('.request_url', $(this.el)).html('<pre></pre>');
         $('.request_url pre', $(this.el)).text(this.invocationUrl);

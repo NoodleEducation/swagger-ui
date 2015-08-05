@@ -127,6 +127,16 @@ gulp.task('copy', ['less'], function() {
 });
 
 /**
+ * Deploy dist to static
+ */
+gulp.task('deploy', ['copy', 'dist'], function() {
+  gulp
+    .src(['./dist/**/!(*.html)'])
+    .pipe(gulp.dest('../noodle-api/noodleapi/static/swagger'))
+    .on('error', log);
+});
+
+/**
  * Watch for changes and recompile
  */
 gulp.task('watch', function() {
@@ -150,5 +160,5 @@ function log(error) {
 }
 
 
-gulp.task('default', ['dist', 'copy']);
+gulp.task('default', ['dist', 'copy', 'deploy']);
 gulp.task('serve', ['connect', 'watch']);
