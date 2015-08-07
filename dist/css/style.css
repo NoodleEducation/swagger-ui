@@ -7,7 +7,7 @@
 }
 #text-head {
   font-size: 80px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
   color: #ffffff;
   float: right;
   margin-right: 20%;
@@ -64,7 +64,6 @@ h1 {
   width: 1500px;
   margin: auto;
   margin-top: 0;
-  background-image: url('../images/shield.png');
   background-repeat: no-repeat;
   background-position: -40px -20px;
   margin-bottom: 210px;
@@ -205,7 +204,7 @@ h2 {
   font-family: 'Arvo', serif;
 }
 .swagger-section .swagger-ui-wrap .code {
-  font-size: 15px;
+  font-size: 13px;
   font-family: 'Arvo', serif;
 }
 .swagger-section .swagger-ui-wrap b {
